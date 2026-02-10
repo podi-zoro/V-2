@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QUEEN ASHI MD PAIR</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #f5f5f5, #e0e0e0, #fafafa);
+      font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+      color: #333;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Smooth background animation */
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(0, 0, 0, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 0, 0, 0.03) 0%, transparent 50%);
+      z-index: 1;
+      animation: float 20s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      33% { transform: translateY(-20px) rotate(1deg); }
+      66% { transform: translateY(20px) rotate(-1deg); }
+    }
+
+    /* Loading Screen Overlay */
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(255, 255, 255, 0.95);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+
+    /* Loader Animation (Smooth Spinner) */
+    .big-loader {
+      position: relative;
+      width: 70px;
+      height: 70px;
+      margin-bottom: 20px;
+    }
+    .big-loader::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 6px solid transparent;
+      border-radius: 50%;
+      border-top-color: #333;
+      animation: spin 1.5s ease infinite;
+    }
+    .big-loader::after {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      width: calc(100% - 16px);
+      height: calc(100% - 16px);
+      border: 4px solid transparent;
+      border-radius: 50%;
+      border-top-color: #666;
+      animation: spinReverse 1.2s ease infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    @keyframes spinReverse {
+      to {
+        transform: rotate(-360deg);
+      }
+    }
+
+    /* Container */
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      z-index: 10;
+      position: relative;
+    }
+
+    /* Smooth Card Design */
+    .box {
+      width: 100%;
+      max-width: 380px;
+      padding: 35px 30px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.1),
+        0 5px 15px rgba(0, 0, 0, 0.07),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+      text-align: center;
+      transform: perspective(1000px) translateY(0);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+    }
+
+    .box:hover {
+      transform: perspective(1000px) translateY(-10px);
+      box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.15),
+        0 10px 20px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+    }
+
+    #text {
+      color: #333;
+    }
+
+    /* Smooth Text Styling */
+    .centered-text {
+      color: #222;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .icon-container {
+      font-size: 2.5rem;
+      color: #444;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    h4 {
+      color: #555;
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    h6 {
+      color: #888;
+      margin-bottom: 25px;
+      font-size: 0.9rem;
+      letter-spacing: 3px;
+      position: relative;
+      padding: 10px 0;
+    }
+
+    h6::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #ddd, transparent);
+    }
+
+    /* Smooth Input Container */
+    .input-container {
+      display: flex;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      padding: 5px;
+      gap: 5px;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto 25px;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.05),
+        0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+
+    .input-container:focus-within {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      box-shadow: 
+        inset 0 2px 6px rgba(0, 0, 0, 0.08),
+        0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Smooth Input Field */
+    .input-container input {
+      flex: 1;
+      padding: 14px 16px;
+      background: transparent;
+      border: none;
+      border-radius: 8px 0 0 8px;
+      color: #333;
+      font-size: 1rem;
+      font-weight: 400;
+      border-left: 3px solid #ccc;
+      transition: all 0.3s ease;
+    }
+
+    .input-container input::placeholder {
+      color: #999;
+      font-weight: 300;
+    }
+
+    .input-container input:focus {
+      border-left: 3px solid #888;
+      background: rgba(0, 0, 0, 0.02);
+      outline: none;
+      color: #222;
+    }
+
+    /* Smooth Button */
+    .input-container button {
+      padding: 14px 24px;
+      background: linear-gradient(135deg, #444, #222);
+      border: none;
+      border-radius: 0 8px 8px 0;
+      color: #fff;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .input-container button::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transform: translateX(-100%);
+    }
+
+    .input-container button:hover {
+      background: linear-gradient(135deg, #222, #000);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .input-container button:hover::after {
+      animation: shimmer 1s;
+    }
+
+    @keyframes shimmer {
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    .input-container button:active {
+      transform: translateY(0);
+    }
+
+    #waiting-message,
+    #pair a {
+      color: #666;
+      font-size: 1rem;
+      margin-top: 20px;
+      display: block;
+    }
+
+    /* Smooth Code Display */
+    #copy {
+      cursor: pointer;
+      color: #444;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      margin: 20px 0;
+      display: block;
+      text-align: center;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    #copy:hover {
+      color: #222;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    /* Message Styling */
+    .message {
+      background: rgba(255, 255, 255, 0.8);
+      border-left: 4px solid #888;
+      padding: 15px 20px;
+      margin: 15px 0;
+      border-radius: 8px;
+      text-align: left;
+      font-size: 0.95rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    }
+
+    .message.error {
+      border-left-color: #cc0000;
+      background: rgba(255, 230, 230, 0.8);
+    }
+
+    .message.success {
+      border-left-color: #888;
+      background: rgba(240, 240, 240, 0.8);
+    }
+
+    /* Smooth Loading Animation */
+    @keyframes loadingDots {
+      0% {
+        opacity: 0.3;
+        transform: translateY(0);
+      }
+      50% {
+        opacity: 1;
+        transform: translateY(-3px);
+      }
+      100% {
+        opacity: 0.3;
+        transform: translateY(0);
+      }
+    }
+
+    .loading-dots span {
+      display: inline-block;
+      font-weight: 400;
+      font-size: 1.2rem;
+      color: #666;
+      animation-name: loadingDots;
+      animation-duration: 1.4s;
+      animation-iteration-count: infinite;
+      animation-fill-mode: both;
+      margin-right: 3px;
+      opacity: 0.3;
+    }
+
+    .loading-dots span:nth-child(1) {
+      animation-delay: 0s;
+    }
+    .loading-dots span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    .loading-dots span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    /* Smooth Responsive Design */
+    @media (max-width: 500px) {
+      .box {
+        padding: 25px 20px;
+        max-width: 90vw;
+        margin: 0 10px;
+      }
+
+      .input-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .input-container input {
+        border-radius: 8px;
+        border-left: none;
+        border-bottom: 3px solid #ccc;
+      }
+
+      .input-container input:focus {
+        border-left: none;
+        border-bottom: 3px solid #888;
+      }
+
+      .input-container button {
+        border-radius: 8px;
+        width: 100%;
+      }
+
+      .centered-text {
+        font-size: 1.3rem;
+      }
+      
+      .icon-container {
+        font-size: 2rem;
+      }
+    }
+
+    /* Smooth Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="big-loader"></div>
+    <div class="centered-text" style="color:#333;letter-spacing:1px;font-weight:400">Initializing...</div>
+  </div>
+
+  <div class="container">
+    <div class="main">
+      <div class="box" id="box">
+        <div id="text">
+          <div class="icon-container">
+            <i class="fas fa-user-circle"></i>
+          </div>
+          <h3 class="centered-text">CRATED BY AK DEV</h3>
+          <h4>QUEEN ASHI MD MINI BOT</h4>
+          <h6>────────────</h6>
+          <div class="input-container">
+            <input placeholder="+94xxxxxxxxx" type="number" id="number" name="" />
+            <button id="submit">SUBMIT</button>
+          </div>
+          <a id="waiting-message" class="centered-text" style="display: none;">
+            <span>Please wait</span>
+            <span class="loading-dots">
+              <span>.</span><span>.</span><span>.</span>
+            </span>
+          </a>
+          <main id="pair"></main>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
+  <script>
+    let a = document.getElementById("pair");
+    let b = document.getElementById("submit");
+    let c = document.getElementById("number");
+    let waitingMessage = document.getElementById("waiting-message");
+    let loadingScreen = document.getElementById("loading-screen");
+    let box = document.getElementById("box");
+
+    // Hide loading screen on page load
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        loadingScreen.style.opacity = "0";
+        setTimeout(() => {
+          loadingScreen.style.display = "none";
+        }, 500);
+      }, 1500);
+    });
+
+    async function Copy() {
+      let text = document.getElementById("copy").innerText;
+      let obj = document.getElementById("copy");
+      await navigator.clipboard.writeText(obj.innerText.replace("CODE: ", ""));
+      obj.innerText = "✓ COPIED SUCCESSFULLY";
+      obj.style = "color:#222;font-weight:500;background:rgba(255,255,255,0.9);border:1px solid rgba(0,0,0,0.1)";
+      setTimeout(() => {
+        obj.innerText = text;
+        obj.style = "color:#444;font-weight:500;background:rgba(255,255,255,0.7);border:1px solid rgba(0,0,0,0.1)";
+      }, 2000);
+    }
+
+    b.addEventListener("click", async (e) => {
+      e.preventDefault();
+      if (!c.value) {
+        a.innerHTML =
+          '<div class="message error">Please enter your WhatsApp number with country code.</div>';
+        waitingMessage.style.display = "none";
+      } else if (c.value.replace(/[^0-9]/g, "").length < 11) {
+        a.innerHTML =
+          '<div class="message error">Invalid number format. Please check and try again.</div>';
+        waitingMessage.style.display = "none";
+      } else {
+        const bc = c.value.replace(/[^0-9]/g, "");
+        let bb = "";
+        let bbc = "";
+        const cc = bc.split("");
+        cc.forEach((a, index) => {
+          bbc += a;
+          if (bbc.length === 3 || bbc.length === 8) {
+            bb += " " + a;
+          } else {
+            bb += a;
+          }
+        });
+        c.type = "text";
+        c.value = "+" + bb;
+        c.style = "color:#222;font-size:16px;font-weight:400";
+        a.innerHTML = "";
+        waitingMessage.style.display = "inline-block";
+
+        try {
+          let { data } = await axios(`/code?number=${bc}`);
+          let code = data.code || "Service Unavailable";
+          waitingMessage.style.display = "none";
+          a.innerHTML =
+            '<div class="message success">Pairing code generated successfully</div>' +
+            '<div id="copy" onclick="Copy()" style="color:#444;font-weight:500;padding:16px;background:rgba(255,255,255,0.7);border:1px solid rgba(0,0,0,0.1);border-radius:10px;margin:20px 0;text-align:center;font-size:1.1rem;letter-spacing:0.5px;cursor:pointer;transition:all 0.3s ease;box-shadow:0 2px 8px rgba(0,0,0,0.05);">' +
+            'CODE: <span style="color:#222;font-weight:600;letter-spacing:1px;">' + code + '</span></div>' +
+            '<div class="message" style="text-align:center;font-size:0.9rem;color:#666;">Click code to copy to clipboard</div>';
+        } catch (error) {
+          waitingMessage.style.display = "none";
+          a.innerHTML =
+            '<div class="message error">Connection error. Please try again.</div>';
+        }
+      }
+    });
+    
+    // Add smooth focus effect
+    c.addEventListener('focus', () => {
+      c.parentElement.style.transform = 'scale(1.02)';
+    });
+    
+    c.addEventListener('blur', () => {
+      c.parentElement.style.transform = 'scale(1)';
+    });
+  </script>
+</body>
+</html>
