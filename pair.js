@@ -2992,11 +2992,7 @@ case 'system': {
   break;
 }
 case 'menu': {
-  try { 
-    await socket.sendMessage(sender, { 
-      react: { text: "🛸", key: msg.key } 
-    }); 
-  } catch(e){}
+  try { await socket.sendMessage(sender, { react: { text: "💎", key: msg.key } }); } catch(e){}
 
   try {
     const startTime = socketCreationTime.get(number) || Date.now();
@@ -3004,141 +3000,148 @@ case 'menu': {
     const hours = Math.floor(uptime / 3600);
     const minutes = Math.floor((uptime % 3600) / 60);
     const seconds = Math.floor(uptime % 60);
-    const pushname = msg.pushName || 'User';
 
-    // Load per-session config
+    // load per-session config (logo, botName)
     let userCfg = {};
-    try { 
-      if (number && typeof loadUserConfigFromMongo === 'function') {
-        userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; 
-      }
-    } catch(e){ 
-      console.warn('menu: failed to load config', e); 
-      userCfg = {}; 
-    }
+    try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; }
+    catch(e){ console.warn('menu: failed to load config', e); userCfg = {}; }
 
-    const title = userCfg.botName || '㋚ 𝐐𝚄𝙴𝙴𝙽 𝐀𝚂𝙷𝙸 𝐌𝙳 𝐌𝙸𝙽𝙸';
+    const title = userCfg.botName || '© ᴀꜱʜɪ ᴍᴅ ᴍɪɴɪ';
 
     // 🔹 Fake contact for Meta AI mention
     const shonux = {
-      key: {
-        remoteJid: "status@broadcast",
-        participant: "0@s.whatsapp.net",
-        fromMe: false,
-        id: "META_AI_FAKE_ID_MENU"
-      },
-      message: {
-        contactMessage: {
-          displayName: title,
-          vcard: `BEGIN:VCARD
+        key: {
+            remoteJid: "status@broadcast",
+            participant: "0@s.whatsapp.net",
+            fromMe: true,
+            id: "META_AI_FAKE_ID_MENU"
+        },
+        message: {
+            contactMessage: {
+                displayName: title,
+                vcard: `BEGIN:VCARD
 VERSION:3.0
 N:${title};;;;
 FN:${title}
 ORG:Meta Platforms
 TEL;type=CELL;type=VOICE;waid=13135550002:+1 313 555 0002
 END:VCARD`
+            }
         }
-      }
     };
-
+	  const date = new Date();
+    const slstDate = new Date(date.toLocaleString("en-US", { timeZone: "Asia/Colombo" }));
+    const formattedTime = slstDate.toLocaleTimeString();
+    const hour = slstDate.getHours();
+    const greetings = hour < 12 ? 'ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ..🌅' :
+                      hour < 17 ? 'ɢᴏᴏᴅ ᴀꜰᴛᴇʀɴᴏᴏɴ..🌞' :
+                      hour < 20 ? 'ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ..🌆' : 'ɢᴏᴏᴅ ɴɪɢʜᴛ..🌙';
+	const nuroweb = 'https://queen-ashi-main-site.netlify.app';
     const text = `
-𓆩♡𓆪  *${title}*  𓆩♡𓆪
-    ✦  *𝐌𝐀𝐈𝐍 𝐌𝐄𝐍𝐔*  ✦
+👋 HI DTEC MINI BOT USER
 
-┌─── ⋅ ∙ ∘ ☽ ༓ ☾ ∘ ⋅ ───┐
-   ☾⋆⁺₊  *𝐁𝐎𝐓 𝐒𝐓𝐀𝐓𝐔𝐒*  ₊⁺⋆☽
-   
-   𐙚˚࿔  *Uꜱᴇʀ*     : ${pushname}
-   𐙚˚࿔  *Bᴏᴛ*      : ${title}
-   𐙚˚࿔  *Oᴡɴᴇʀ*    : ${config.OWNER_NAME || 'Dev xanz'}
-   𐙚˚࿔  *Vᴇʀꜱɪᴏɴ*  : ${config.BOT_VERSION || '0.0001+'}
-   𐙚˚࿔  *Uᴘᴛɪᴍᴇ*   : ${hours}h ${minutes}m ${seconds}s
-   𐙚˚࿔  *Pʟᴀᴛꜰᴏʀᴍ* : ${process.env.PLATFORM || 'Heroku'}
-└─── ⋅ ∙ ∘ ☽ ༓ ☾ ∘ ⋅ ───┘
-
-ˎˊ˗. ⋆‧₊˚  *𝐌𝐄𝐍𝐔 𝐎𝐏𝐓𝐈𝐎𝐍𝐒* ˚₊‧⋆ .˗ˊˎ
-
-│ ♅  *𝐌𝐄𝐃𝐈𝐀 𝐇𝐔𝐁*    ⤿  ᴅᴏᴡɴʟᴏᴀᴅᴇʀꜱ & ᴍᴇᴅɪᴀ
-│ ♅  *𝐂𝐑𝐄𝐀𝐓𝐎𝐑 𝐒𝐏𝐀𝐂𝐄*  ⤿  ᴄʀᴇᴀᴛᴏʀ ᴛᴏᴏʟꜱ
-│ ♅  *𝐒𝐘𝐒𝐓𝐄𝐌 𝐓𝐎𝐎𝐋𝐒*  ⤿  ʙᴏᴛ ꜱʏꜱᴛᴇᴍ ꜰᴇᴀᴛᴜʀᴇꜱ
-│ ♅  *𝐒𝐄𝐓𝐔𝐏 𝐏𝐀𝐍𝐄𝐋*   ⤿  ʙᴏᴛ ᴄᴜꜱᴛᴏᴍɪᴢᴀᴛɪᴏɴ
-
-°𓏲ּ𝄢⊂⊃ֶָ֢ ˒ ⤿🌐  *𝐌𝐈𝐍𝐈 𝐁𝐎𝐓 𝐒𝐈𝐓𝐄*
-⊂⊃ֶָ֢ ˒ ⤿🔗  https://queen-ashi-main-site.netlify.app
-
-⋆˚꩜｡⋆ > ⁺ִ ꤥ‌ ּ  𝐒𝐞𝐥𝐞𝐜𝐭 𝐚 𝐜𝐚𝐭𝐞𝐠𝐨𝐫𝐲 𝐛𝐞𝐥𝐨𝐰 ♡
-⋆˚꩜｡⋆ > ⁺ִ ꤥ‌ ּ  ${new Date().toLocaleString('en-US', { timeZone: 'Asia/Colombo' })}
-
-𐔌՞. .՞𐦯  *${title}*  𐦯՞. .՞𐔌
+*╭── 「 ʙᴏᴛ ɪɴꜰᴏ 」*
+*┃🤖 ɴᴀᴍᴇ :* © ᴀꜱʜɪ ᴍᴅ ᴍɪɴɪ
+*┃👑 ᴏᴡɴᴇʀ :* Abdul kalam
+*┃👋 ɢʀᴇᴇᴛ :* ${greetings}
+*╰────────────────⦁*
+*╭──「 ᴅᴀᴛᴇ & ᴛɪᴍᴇ 」*
+*┃📆 ᴅᴀᴛᴇ :* ${slstDate}
+*┃🕜 ᴛɪᴍᴇ :* ${formattedTime}
+*╰─────────────────⦁*
+🌍 ᴡᴇʙ : ${nuroweb}
+> © ᴀꜱʜɪ ᴍᴅ ᴍɪɴɪ
 `.trim();
+	  
+	  let vpsOptions = [
+        { title: "📥 DOWNLOAD MENU", description: "© ɢᴇᴛ ᴅᴏᴡɴʟᴏᴀᴅ ᴍᴇɴᴜ", buttonId: `${config.PREFIX}download` },
+		  { title: "🛠️ TOOL MENU", description: "© ɢᴇᴛ ᴛᴏᴏʟ ᴍᴇɴᴜ", buttonId: `${config.PREFIX}tool` },
+		  { title: "🚀 OTHER MENU", description: "© ɢᴇᴛ ᴏᴛʜᴇʀᴇ ᴍᴇɴᴜ", buttonId: `${config.PREFIX}other` },
+		  { title: "⚙️ SETTINGS MENU", description: "© ɢᴇᴛ ꜱᴇᴛᴛɪɴɢꜱ ᴍᴇɴᴜ", buttonId: `${config.PREFIX}settings` },
+        { title: "👑 OWNER", description: "© ɢᴇᴛ ᴏᴡɴᴇʀ", buttonId: `${config.PREFIX}owner` }
+    ];
+	  let rows = [
 
-    const buttons = [
-      { 
-        buttonId: `${config.PREFIX}download`, 
-        buttonText: { displayText: "㋚ 𝐌𝐄𝐃𝐈𝐀 𝐇𝐔𝐁" }, 
-        type: 1 
-      },
-      { 
-        buttonId: `${config.PREFIX}creative`, 
-        buttonText: { displayText: "㋚ 𝐂𝐑𝐄𝐀𝐓𝐎𝐑 𝐒𝐏𝐀𝐂𝐄" }, 
-        type: 1 
-      },
-      { 
-        buttonId: `${config.PREFIX}tools`, 
-        buttonText: { displayText: "㋚ 𝐒𝐘𝐒𝐓𝐄𝐌 𝐓𝐎𝐎𝐋𝐒" }, 
-        type: 1 
-      },
-      { 
-        buttonId: `${config.PREFIX}settings`, 
-        buttonText: { displayText: "㋚ 𝐒𝐄𝐓𝐔𝐏 𝐏𝐀𝐍𝐄𝐋" }, 
-        type: 1 
-      }
+  {
+    title: "CONTACT OWNER",
+    description: "© ᴀꜱʜɪ ᴍᴅ ᴍɪɴɪ",
+    id: "https://wa.me/message/AGSOKPJCBKVFO1"
+  },
+  {
+    title: "📥 DOWNLOAD MENU",
+    description: "DOWANLOAD",
+    id: `${config.PREFIX}download`
+  },
+  {
+    title: "🛠️ TOOLS MENU",
+    description: "TOOLS",
+    id: `${config.PREFIX}tool`
+  },
+  {
+    title: "🚀 OTHERS MENU",
+    description: ".OTHER MENU",
+    id: `${config.PREFIX}other`
+  },
+  {
+    title: "⚙️ SETTINGS",
+    description: "SETTINGS",
+    id: `${config.PREFIX}settings`
+  },
+  {
+    title: "👑 OWNER",
+    description: "OWNER",
+    id: `${config.PREFIX}owner`
+  }
+];
+
+   let buttonSections = [
+        {
+            title: "© ᴀꜱʜɪ ᴍᴅ ᴍɪɴɪ ᴍᴇɴᴜ",
+            highlight_label: "© ᴀꜱʜɪ ᴍᴅ ᴍɪɴɪ",
+            rows: rows
+        }
     ];
 
-    const defaultImg = 'https://files.catbox.moe/i6kedi.jpg';
-    const useLogo = userCfg.logo || defaultImg;
-
-    // Build image payload
-    let imagePayload;
-    if (String(useLogo).startsWith('http')) {
-      imagePayload = { url: useLogo };
-    } else {
-      try { 
-        imagePayload = fs.readFileSync(useLogo); 
-      } catch(e) { 
-        imagePayload = { url: defaultImg }; 
-      }
-    }
+    let buttons = [
+        {
+            buttonId: "action",
+            buttonText: { displayText: "Sᴇʟᴇᴄᴛ Mᴇɴᴜ" },
+            type: 4,
+            nativeFlowInfo: {
+                name: "single_select",
+                paramsJson: JSON.stringify({
+                    title: "© ᴀꜱʜɪ ᴍᴅ ᴍɪɴɪ",
+                    sections: buttonSections
+                })
+            }
+        },
+    ];
+    const MenuImg = 'https://files.catbox.moe/i6kedi.jpg';
+    const useLogo = userCfg.logo || MenuImg;
 
     await socket.sendMessage(sender, {
-      image: imagePayload,
-      caption: text,
-      footer: `${title} • ${config.BOT_VERSION || '1.0.0'}`,
-      buttons,
-      headerType: 4
+        buttons,
+        headerType: 1,
+        viewOnce: true,
+        caption: text,
+        image:{ url:MenuImg },
+        contextInfo: {
+            mentionedJid: [sender], 
+            forwardingScore: 999,
+            isForwarded: true,
+            forwardedNewsletterMessageInfo: {
+                newsletterJid: '120363424595683472@newsletter',
+                newsletterName: '˚⊱🎀⊰˚ Ak Dev Labszz ˚⊱🎀⊰˚',
+                serverMessageId: 143
+            }
+        }
     }, { quoted: shonux });
-
-    // Optional: Send audio with menu
-    try {
-      await socket.sendMessage(sender, {
-        audio: { url: 'https://drive.google.com/uc?export=download&id=1qafJfhII7vuZwGxPLGBsOLAnJnXgQAQl' },
-        mimetype: 'audio/mpeg',
-        ptt: true
-      });
-    } catch (audioErr) {
-      console.warn('Failed to send menu audio:', audioErr.message);
-    }
-
   } catch (err) {
     console.error('menu command error:', err);
-    try { 
-      await socket.sendMessage(sender, { 
-        text: '❌ Failed to show menu.' 
-      }, { quoted: msg }); 
-    } catch(e){}
+    try { await socket.sendMessage(sender, { text: '❌ Failed to show menu.'+err }, { quoted: msg }); } catch(e){}
   }
   break;
-				  }
+		}
 // ==================== DOWNLOAD MENU ====================
 case 'download': {
   try { await socket.sendMessage(sender, { react: { text: "📥", key: msg.key } }); } catch(e){}
