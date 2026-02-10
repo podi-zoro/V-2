@@ -27,27 +27,27 @@ const {
 
 // ---------------- CONFIG ----------------
 
-const BOT_NAME_FANCY = '𝐐𝚄𝙴𝙴𝙽 𝐀𝚂𝙷𝙸 𝐌𝙳 𝐌𝙸𝙽𝙸';
+const BOT_NAME_FANCY = '© ᴀꜱʜɪ ᴍᴅ ᴍɪɴɪ';
 
 const config = {
   AUTO_VIEW_STATUS: 'true',
   AUTO_LIKE_STATUS: 'true',
   AUTO_RECORDING: 'false',
-  AUTO_LIKE_EMOJI:  ['🎀','💗','🪼','🦄','🍒','🍫','🧸','☁️','🌟','👀','💎'],
+  AUTO_LIKE_EMOJI:  ['🎀','🧃','🪼','🦄','🍒','🍫','🧸','☁️','🌟','👀','💎'],
   PREFIX: '.',
   MAX_RETRIES: 3,
-  GROUP_INVITE_LINK: 'https://chat.whatsapp.com/I3ba6t5v1po8YIgKkgd1mG',
+  GROUP_INVITE_LINK: 'https://chat.whatsapp.com/JaHC5S98mjIK6STcWf25rh?mode=gi_c',
   RCD_IMAGE_PATH: 'https://files.catbox.moe/i6kedi.jpg',
   NEWSLETTER_JID: '120363424595683472@newsletter',
   OTP_EXPIRY: 300000,
   WORK_TYPE: 'private',
   OWNER_NUMBER: process.env.OWNER_NUMBER || '94776803526',
   CHANNEL_LINK: 'https://whatsapp.com/channel/0029Vb6yaNMIt5s3s5iUK51g',
-  BOT_NAME: '𝐐𝚄𝙴𝙴𝙽 𝐀𝚂𝙷𝙸 𝐌𝙳 𝐌𝙸𝙽𝙸',
-  BOT_VERSION: '1.0.0V',
-  OWNER_NAME: '(dev) xanz',
+  BOT_NAME: '© ᴀꜱʜɪ ᴍᴅ ᴍɪɴɪ',
+  BOT_VERSION: '0.0.2',
+  OWNER_NAME: 'Abdul kalam',
   IMAGE_PATH: 'https://files.catbox.moe/i6kedi.jpg',
-  BOT_FOOTER: '> *P⊙WΞRΞD BY DΞV XΛNZ ⧉ CYBΞZ*',
+  BOT_FOOTER: '© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴀᴋ ᴅᴇᴠ',
   BUTTON_IMAGES: { ALIVE: 'https://files.catbox.moe/i6kedi.jpg' }
 };
 
