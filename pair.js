@@ -3038,7 +3038,7 @@ END:VCARD`
                       hour < 20 ? 'ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ..🌆' : 'ɢᴏᴏᴅ ɴɪɢʜᴛ..🌙';
 	const nuroweb = 'https://queen-ashi-main-site.netlify.app';
     const text = `
-👋 HI DTEC MINI BOT USER
+👋 𝐇𝐄𝐋𝐋𝐎𝐖❜ 𝐔𝐒𝐄𝐑
 
 *╭── 「 ʙᴏᴛ ɪɴꜰᴏ 」*
 *┃🤖 ɴᴀᴍᴇ :* © ᴀꜱʜɪ ᴍᴅ ᴍɪɴɪ
@@ -3060,6 +3060,7 @@ END:VCARD`
 		  { title: "⚙️ SETTINGS MENU", description: "© ɢᴇᴛ ꜱᴇᴛᴛɪɴɢꜱ ᴍᴇɴᴜ", buttonId: `${config.PREFIX}settings` },
         { title: "👑 OWNER", description: "© ɢᴇᴛ ᴏᴡɴᴇʀ", buttonId: `${config.PREFIX}owner` }
     ];
+	  
 	  let rows = [
 
   {
