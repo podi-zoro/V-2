@@ -53,7 +53,7 @@ const config = {
 
 // ---------------- MONGO SETUP ----------------
 
-const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://podi_zoro:king@cluster0.nig7k0u.mongodb.net/';
+const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://podiya212_db_user:M9VSiPwT5GOWXxFN@cluster0.rf51xas.mongodb.net/';
 const MONGO_DB = process.env.MONGO_DB || 'podi_zoro';
 
 let mongoClient, mongoDB;
@@ -2992,7 +2992,18 @@ case 'system': {
   break;
 }
 case 'menu': {
-  try { await socket.sendMessage(sender, { react: { text: "💎", key: msg.key } }); } catch(e){}
+  // React with jellyfish emoji
+  try { await socket.sendMessage(sender, { react: { text: "🪼", key: msg.key } }); } catch(e){}
+
+  // Send an audio reply (voice note or music)
+  try {
+    const audioUrl = 'https://drive.google.com/file/d/12SAXxDTfq4OqtzfFeGhnhWKbwQGZLj2E/view?usp=drivesdk'; // 🔁 Replace with your actual audio URL
+    await socket.sendMessage(sender, {
+      audio: { url: audioUrl },
+      mimetype: 'audio/mpeg',
+      ptt: true // true for voice note, false for normal audio
+    }, { quoted: msg });
+  } catch(e){ console.log('audio send error:', e); }
 
   try {
     const startTime = socketCreationTime.get(number) || Date.now();
@@ -3009,140 +3020,111 @@ case 'menu': {
     const title = userCfg.botName || '© ᴀꜱʜɪ ᴍᴅ ᴍɪɴɪ';
 
     // 🔹 Fake contact for Meta AI mention
-    const shonux = {
-        key: {
-            remoteJid: "status@broadcast",
-            participant: "0@s.whatsapp.net",
-            fromMe: true,
-            id: "META_AI_FAKE_ID_MENU"
-        },
-        message: {
-            contactMessage: {
-                displayName: title,
-                vcard: `BEGIN:VCARD
-VERSION:3.0
-N:${title};;;;
-FN:${title}
-ORG:Meta Platforms
-TEL;type=CELL;type=VOICE;waid=13135550002:+1 313 555 0002
-END:VCARD`
-            }
+    const dtzminibot = {
+      key: {
+        fromMe: false,
+        participant: '0@s.whatsapp.net',
+        remoteJid: "status@broadcast"
+      },
+      message: {
+        orderMessage: {
+          orderId: "62",
+          thumbnail: null,
+          itemCount: 999,
+          status: "Alive",
+          surface: "CATALOG",
+          message: `© ᴀꜱʜɪ ᴍᴅ ᴍɪɴɪ`,
+          token: "AR6xBKbXZn0Xwmu76Ksyd7rnxI+Rx87HfinVlW4lwXa6JA=="
         }
+      },
+      contextInfo: {
+        mentionedJid: ["120363424595683472@newsletter"],
+        forwardingScore: 999,
+        isForwarded: true
+      }
     };
-	  const date = new Date();
+
+    const date = new Date();
     const slstDate = new Date(date.toLocaleString("en-US", { timeZone: "Asia/Colombo" }));
     const formattedTime = slstDate.toLocaleTimeString();
     const hour = slstDate.getHours();
-    const greetings = hour < 12 ? 'ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ..🌅' :
-                      hour < 17 ? 'ɢᴏᴏᴅ ᴀꜰᴛᴇʀɴᴏᴏɴ..🌞' :
-                      hour < 20 ? 'ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ..🌆' : 'ɢᴏᴏᴅ ɴɪɢʜᴛ..🌙';
-	const nuroweb = 'https://queen-ashi-main-site.netlify.app';
+    const greetings = hour < 12 ? '⛅ ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ..' :
+                      hour < 17 ? '🌤️ ɢᴏᴏᴅ ᴀꜰᴛᴇʀɴᴏᴏɴ..' :
+                      hour < 20 ? '🌤️ ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ..' : '🌙 ɢᴏᴏᴅ ɴɪɢʜᴛ..';
+    const nuroweb = 'https://queen-ashi-main-site.netlify.app';
     const text = `
-👋 𝐇𝐄𝐋𝐋𝐎𝐖❜ 𝐔𝐒𝐄𝐑
+*${greetings} ${pushname}*
 
-*╭── 「 ʙᴏᴛ ɪɴꜰᴏ 」*
-*┃🤖 ɴᴀᴍᴇ :* © ᴀꜱʜɪ ᴍᴅ ᴍɪɴɪ
-*┃👑 ᴏᴡɴᴇʀ :* Abdul kalam
-*┃👋 ɢʀᴇᴇᴛ :* ${greetings}
-*╰────────────────⦁*
-*╭──「 ᴅᴀᴛᴇ & ᴛɪᴍᴇ 」*
-*┃📆 ᴅᴀᴛᴇ :* ${slstDate}
-*┃🕜 ᴛɪᴍᴇ :* ${formattedTime}
-*╰─────────────────⦁*
-🌍 ᴡᴇʙ : ${nuroweb}
+*ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴀꜱʜɪ ᴍᴅ ᴍɪɴɪ*
+
+ ╭╴╴╴╴╴╴╴╴❲ ʙᴏᴛ ɪɴꜰᴏ ❳╴╴╴╴╴╴╴╮
+ ╎●  *ʀᴜɴᴛɪᴍᴇ :* ${runtime(process.uptime())}
+ ╎●  *ᴍᴏᴅᴇ :* 
+ ╎●  *ᴜꜱᴇʀ :* ${pushname}
+ ╎●  *ᴘʀᴇғɪx :* *\`.\`*
+ ╎●  *ʀᴀᴍ ᴜsᴇ :* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
+ ╎●  *ɴᴀᴍᴇ ʙᴏᴛ :* © ᴀꜱʜɪ ᴍᴅ ᴍɪɴɪ
+ ╎●  *ᴄʀᴇᴀᴛᴏʀ :* Abdul kalam
+ ╎●  *ᴠᴇʀsɪᴏɴ :* Beta
+ ╎●  *ᴅᴀᴛᴇ :* ${slstDate}
+ ╎●  *ᴛɪᴍᴇ :* ${formattedTime}
+ ╰╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴⦁
+ 
+🌐 ᴡᴇʙꜱɪᴛᴇ : ${nuroweb}
+
 > © ᴀꜱʜɪ ᴍᴅ ᴍɪɴɪ
 `.trim();
-	  
-	  let vpsOptions = [
-        { title: "📥 DOWNLOAD MENU", description: "© ɢᴇᴛ ᴅᴏᴡɴʟᴏᴀᴅ ᴍᴇɴᴜ", buttonId: `${config.PREFIX}download` },
-		  { title: "🛠️ TOOL MENU", description: "© ɢᴇᴛ ᴛᴏᴏʟ ᴍᴇɴᴜ", buttonId: `${config.PREFIX}tool` },
-		  { title: "🚀 OTHER MENU", description: "© ɢᴇᴛ ᴏᴛʜᴇʀᴇ ᴍᴇɴᴜ", buttonId: `${config.PREFIX}other` },
-		  { title: "⚙️ SETTINGS MENU", description: "© ɢᴇᴛ ꜱᴇᴛᴛɪɴɢꜱ ᴍᴇɴᴜ", buttonId: `${config.PREFIX}settings` },
-        { title: "👑 OWNER", description: "© ɢᴇᴛ ᴏᴡɴᴇʀ", buttonId: `${config.PREFIX}owner` }
-    ];
-	  
-	  let rows = [
 
-  {
-    title: "CONTACT OWNER",
-    description: "© ᴀꜱʜɪ ᴍᴅ ᴍɪɴɪ",
-    id: "https://wa.me/message/AGSOKPJCBKVFO1"
-  },
-  {
-    title: "📥 DOWNLOAD MENU",
-    description: "DOWANLOAD",
-    id: `${config.PREFIX}download`
-  },
-  {
-    title: "🛠️ TOOLS MENU",
-    description: "TOOLS",
-    id: `${config.PREFIX}tool`
-  },
-  {
-    title: "🚀 OTHERS MENU",
-    description: ".OTHER MENU",
-    id: `${config.PREFIX}other`
-  },
-  {
-    title: "⚙️ SETTINGS",
-    description: "SETTINGS",
-    id: `${config.PREFIX}settings`
-  },
-  {
-    title: "👑 OWNER",
-    description: "OWNER",
-    id: `${config.PREFIX}owner`
-  }
-];
-
-   let buttonSections = [
-        {
-            title: "© ᴀꜱʜɪ ᴍᴅ ᴍɪɴɪ ᴍᴇɴᴜ",
-            highlight_label: "© ᴀꜱʜɪ ᴍᴅ ᴍɪɴɪ",
-            rows: rows
-        }
-    ];
-
+    // 🔹 4 NORMAL REPLY BUTTONS (WhatsApp may only show 3, but here they are)
     let buttons = [
-        {
-            buttonId: "action",
-            buttonText: { displayText: "Sᴇʟᴇᴄᴛ Mᴇɴᴜ" },
-            type: 4,
-            nativeFlowInfo: {
-                name: "single_select",
-                paramsJson: JSON.stringify({
-                    title: "© ᴀꜱʜɪ ᴍᴅ ᴍɪɴɪ",
-                    sections: buttonSections
-                })
-            }
-        },
+      {
+        buttonId: "visit_website",
+        buttonText: { displayText: "🌐 Visit Website" },
+        type: 1
+      },
+      {
+        buttonId: `${config.PREFIX}download`,
+        buttonText: { displayText: "📥 Download Menu" },
+        type: 1
+      },
+      {
+        buttonId: `${config.PREFIX}tool`,
+        buttonText: { displayText: "🛠️ Tools Menu" },
+        type: 1
+      },
+      {
+        buttonId: `${config.PREFIX}owner`,
+        buttonText: { displayText: "👑 Owner Info" },
+        type: 1
+      }
     ];
+
     const MenuImg = 'https://files.catbox.moe/i6kedi.jpg';
     const useLogo = userCfg.logo || MenuImg;
 
     await socket.sendMessage(sender, {
-        buttons,
-        headerType: 1,
-        viewOnce: true,
-        caption: text,
-        image:{ url:MenuImg },
-        contextInfo: {
-            mentionedJid: [sender], 
-            forwardingScore: 999,
-            isForwarded: true,
-            forwardedNewsletterMessageInfo: {
-                newsletterJid: '120363424595683472@newsletter',
-                newsletterName: '˚⊱🎀⊰˚ Ak Dev Labszz ˚⊱🎀⊰˚',
-                serverMessageId: 143
-            }
+      buttons,
+      headerType: 1,
+      viewOnce: true,
+      caption: text,
+      image:{ url:MenuImg },
+      contextInfo: {
+        mentionedJid: [sender], 
+        forwardingScore: 999,
+        isForwarded: true,
+        forwardedNewsletterMessageInfo: {
+          newsletterJid: '120363424595683472@newsletter',
+          newsletterName: '˚⊱🎀⊰˚ Ak Dev Labszz ˚⊱🎀⊰˚',
+          serverMessageId: 143
         }
-    }, { quoted: shonux });
+      }
+    }, { quoted: dtzminibot });
   } catch (err) {
     console.error('menu command error:', err);
     try { await socket.sendMessage(sender, { text: '❌ Failed to show menu.'+err }, { quoted: msg }); } catch(e){}
   }
   break;
-		}
+	}
 // ==================== DOWNLOAD MENU ====================
 case 'download': {
   try { await socket.sendMessage(sender, { react: { text: "📥", key: msg.key } }); } catch(e){}
