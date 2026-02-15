@@ -2125,7 +2125,7 @@ END:VCARD`
                         `*🆔 Pᴀᴄᴋᴀɢᴇ:* \`${result.package}\`\n` +
                         `*📦 Sɪᴢᴇ :* ${result.size}\n` +
                         `*🕒 Lᴀꜱᴛ ᴜᴘᴅᴀᴛᴇ :* ${result.lastUpdate}\n\n` +
-                        `㋚ 𝐏𝙾𝚆𝙴𝚁𝙴𝙳 𝐁𝚈 𝐐𝚄𝙴𝙴𝙽 𝐀𝚂𝙷𝙸 𝐌𝙳 𝐌𝙸𝙽𝙸`;
+                        `> © ᴀꜱʜɪ ᴍᴅ ᴍɪɴɪ`;
 
         // 🔹 Send APK as document
         await socket.sendMessage(sender, {
@@ -2444,18 +2444,17 @@ END:VCARD`
     const seconds = Math.floor(uptime % 60);
 
     const text = `
-𓊆ྀི❤︎𓊇ྀིㅤ♡  *${botName} 𝐈𝚂 𝐀𝙻𝙸𝚅𝙴 𝐍𝙾𝚆*  ㅤ♡𓊆ྀི❤︎𓊇ྀི
+*${botName} ɪꜱ ᴀʟɪᴠᴇ ɴᴏᴡ*
 
-──── ୨୧ ────┈┈┈┈ꫂ᭪
-│ ⋆˚࿔ᶻ 𝗓 𐰁  *ʙᴏᴛ ꜱᴛᴀᴛᴜꜱ*  𐱅𐰁 𝗓 ᶻ࿔˚⋆
+╭──── ୨୧ ────┈┈┈┈ꫂ᭪
+│ ⋆˚࿔ *ʙᴏᴛ ꜱᴛᴀᴛᴜꜱ* ࿔˚⋆
 │ 𐙚˚࿔ *Sᴛᴀᴛᴜꜱ :* Online ˒˓
 │ 𐙚˚࿔ *Bᴏᴛ    :* ${botName}
 │ 𐙚˚࿔ *Oᴡɴᴇʀ  :* ${config.OWNER_NAME || 'Dev xanz'}
 │ 𐙚˚࿔ *Uᴘᴛɪᴍᴇ :* ${hours}h ${minutes}m ${seconds}s
 │ 𐙚˚࿔ *Pʟᴀᴛꜰᴏʀᴍ :* ${process.env.PLATFORM || 'Linux'}
 │ 𐙚˚࿔ *Pʀᴇꜰɪx  :* ${config.PREFIX}
-┈┈┈┈──── ୨୧ ────
-
+╰┈┈┈┈──── ୨୧ ────
 ˎˊ˗. ⋆‧₊˚  *𝐌𝐀𝐈𝐍 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒* ˚₊‧⋆ .˗ˊˎ
 │ ୨ৎ ${config.PREFIX}menu   ㅤ⤿  𝐁𝐨𝐭 𝐌𝐞𝐧𝐮
 │ ୨ৎ ${config.PREFIX}alive  ㅤ⤿  𝐁𝐨𝐭 𝐒𝐭𝐚𝐭𝐮𝐬
@@ -2469,10 +2468,10 @@ END:VCARD`
 ⊂⊃ֶָ֢ ˒ ⤿💬  𝐏𝐞𝐫𝐟𝐞𝐜𝐭 𝐟𝐨𝐫 𝐜𝐡𝐚𝐭𝐭𝐢𝐧𝐠, 𝐡𝐞𝐥𝐩 & 𝐟𝐮𝐧
 ⊂⊃ֶָ֢ ˒ ⤿🔓  𝐅𝐫𝐞𝐞, 𝐨𝐩𝐞𝐧-𝐬𝐨𝐮𝐫𝐜𝐞 & 𝐞𝐚𝐬𝐲 𝐭𝐨 𝐝𝐞𝐩𝐥𝐨𝐲
 
-⋆˚꩜｡⋆ > ⁺ִ ꤥ‌ ּ  𝐁𝐮𝐢𝐥𝐭 𝐭𝐨 𝐦𝐚𝐤𝐞 𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩 𝐦𝐨𝐫𝐞 𝐢𝐧𝐭𝐞𝐥𝐥𝐢𝐠𝐞𝐧𝐭 ♡
-⋆˚꩜｡⋆ > ⁺ִ ꤥ‌ ּ  𝐄𝐚𝐬𝐲 𝐭𝐨 𝐮𝐬𝐞 𝐒𝐢𝐦𝐩𝐥𝐞 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐰𝐢𝐭𝐡 𝐛𝐨𝐭 ⤾ ࣪⡾
+> ⁺ִ ꤥ‌ ּ  𝐁𝐮𝐢𝐥𝐭 𝐭𝐨 𝐦𝐚𝐤𝐞 𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩 𝐦𝐨𝐫𝐞 𝐢𝐧𝐭𝐞𝐥𝐥𝐢𝐠𝐞𝐧𝐭 ♡
+> ⁺ִ ꤥ‌ ּ  𝐄𝐚𝐬𝐲 𝐭𝐨 𝐮𝐬𝐞 𝐒𝐢𝐦𝐩𝐥𝐞 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐰𝐢𝐭𝐡 𝐛𝐨𝐭 ⤾ ࣪⡾
 
-𐔌՞. .՞𐦯  *${botName}*  𐦯՞. .՞𐔌
+*${botName}*
 `;
 
     const buttons = [
@@ -2489,7 +2488,7 @@ END:VCARD`
       {
         image: imagePayload,
         caption: text,
-        footer: `> *P⊙WΞRΞD BY DΞV XΛNZ ⧉ CYBΞZ*`,
+        footer: `> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴀᴋ ᴅᴇᴠ*`,
         buttons,
         headerType: 4
       },
@@ -2673,8 +2672,8 @@ case 'terminal': {
 
 ˎˊ˗. ⋆‧₊˚──────────────────˚₊‧⋆ .˗ˊˎ
 
-⋆˚꩜｡⋆ > ⁺ִ ꤥ‌ ּ  𝐂𝐲𝐛𝐞𝐫 𝐒𝐞𝐜𝐮𝐫𝐢𝐭𝐲 𝐒𝐜𝐚𝐧 𝐂𝐨𝐦𝐩𝐥𝐞𝐭𝐞
-⋆˚꩜｡⋆ > ⁺ִ ꤥ‌ ּ  ${new Date().toLocaleString('en-US', { timeZone: 'Asia/Colombo' })}
+> ⁺ִ ꤥ‌ ּ  𝐂𝐲𝐛𝐞𝐫 𝐒𝐞𝐜𝐮𝐫𝐢𝐭𝐲 𝐒𝐜𝐚𝐧 𝐂𝐨𝐦𝐩𝐥𝐞𝐭𝐞
+> ⁺ִ ꤥ‌ ּ  ${new Date().toLocaleString('en-US', { timeZone: 'Asia/Colombo' })}
 
 𐔌՞. .՞𐦯  *𝐓𝐄𝐑𝐌𝐈𝐍𝐀𝐋 𝐀𝐂𝐂𝐄𝐒𝐒 𝐆𝐑𝐀𝐍𝐓𝐄𝐃*  𐦯՞. .՞𐔌`,
       edit: base.key
@@ -2712,7 +2711,7 @@ for (let i = 0; i < emojis.length; i++) {
 // Final message
 await new Promise(r => setTimeout(r, 800));
 await socket.sendMessage(sender, {
-    text: "*පුක සුදුද ? 🙂*",
+    text: "*Are you gay? 🙂*",
     edit: funMsg.key
 });
 
@@ -2753,7 +2752,7 @@ case 'bots': {
       message: { contactMessage: { displayName: botName, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${botName};;;;\nFN:${botName}\nORG:Meta Platforms\nTEL;type=CELL;type=VOICE;waid=13135550002:+1 313 555 0002\nEND:VCARD` } }
     };
 
-    let text = `🪀 𝐀𝙲𝚃𝙸𝚅𝙴 𝐒𝙴𝚂𝚂𝙸𝙾𝙽𝚂 - ${botName}*\n\n`;
+    let text = `🪀 𝐀𝙲𝚃𝙸𝚅𝙴 𝐒𝙴𝚂𝚂𝙸𝙾𝙽𝚂 - ${botName}\n\n`;
     text += `✅ *Total active sessions :* ${activeCount}\n\n`;
 
     if (activeCount > 0) {
@@ -2793,7 +2792,7 @@ case 'song': {
     const { ytsearch } = require('@dark-yasiya/yt-dl.js');
     const axios = require('axios');
 
-    const botName = 'QUEEN ASHI MD'; 
+    const botName = '© ᴀꜱʜɪ ᴍᴅ ᴍɪɴɪ'; 
     
     const botMention = {
         key: {
@@ -2847,17 +2846,17 @@ case 'song': {
         const menuCaption = `*\`❝ ${title} ❞\`*
    
      ⏱️  *Dᴜʀᴀᴛɪᴏɴ :* ${videoInfo.timestamp}
-     🎶  *Qᴜᴀʟɪᴛʏ :* ${quality || "128"}kbps
-     🖇️  *Lɪɴᴋ :* ${videoInfo.url}
+     🎵  *Qᴜᴀʟɪᴛʏ :* ${quality || "128"}kbps
+     🪩  *Lɪɴᴋ :* ${videoInfo.url}
 
-㋚  𝐏𝙾𝚆𝙴𝚁𝙴𝙳 𝐁𝚈 ${botName}
+> ꜱᴏɴɢ ᴅᴏᴡɴʟᴏᴀᴅ ʙʏ ${botName}
 `;
 
         // මෙහිදී Buttons පෙන්වීමට උත්සාහ කරයි (සමහර WhatsApp අනුවාද වල පමණක් ක්‍රියා කරයි)
         const buttons = [
-            { buttonId: '1', buttonText: { displayText: '📁 𝐃𝐎𝐂𝐔𝐌𝐄𝐍𝐓' }, type: 1 },
-            { buttonId: '2', buttonText: { displayText: '🎧 𝐀𝐔𝐃𝐈𝐎' }, type: 1 },
-            { buttonId: '3', buttonText: { displayText: '🎤 𝐕𝐎𝐈𝐂𝐄 𝐍𝐎𝐓𝐄' }, type: 1 }
+            { buttonId: '1', buttonText: { displayText: '📁 ᴅᴏᴄᴜᴍᴇɴᴛ' }, type: 1 },
+            { buttonId: '2', buttonText: { displayText: '🎧 ᴀᴜᴅɪᴏ' }, type: 1 },
+            { buttonId: '3', buttonText: { displayText: '🎤 ᴠᴏɪᴄᴇ ɴᴏᴛᴇ' }, type: 1 }
         ];
 
         const buttonMessage = {
@@ -2891,7 +2890,8 @@ case 'song': {
                 if (quotedId !== messageId) return;
 
                 if (["1", "2", "3"].includes(selection)) {
-                    socket.ev.off("messages.upsert", handler); // Stop listening                    await socket.sendMessage(sender, { react: { text: "⬇️", key: incoming.key } });
+                    socket.ev.off("messages.upsert", handler); // Stop listening                    
+					await socket.sendMessage(sender, { react: { text: "⬇️", key: incoming.key } });
 
                     const commonParams = { url: downloadLink };
 
@@ -2900,7 +2900,7 @@ case 'song': {
                             document: commonParams,
                             mimetype: "audio/mpeg",
                             fileName: `${title}.mp3`,
-                            caption: `> ㋚ 𝐏𝙾𝚆𝙴𝚁𝙴𝙳 𝐁𝚈 ${botName}`
+                            caption: `> © ʙʏ ${botName}`
                         }, { quoted: incoming });
                     } else if (selection === "2") {
                         await socket.sendMessage(sender, {
@@ -2943,18 +2943,16 @@ case 'system': {
 
     const os = require('os');
     const text = `
-𓆩♡𓆪  *${botName} 𝐒𝚈𝚂𝚃𝙴𝙼 𝐈𝙽𝙵𝙾*  𓆩♡𓆪
+*${botName} ꜱʏꜱᴛᴇᴍ ɪɴꜰᴏ*
 
 ┌─── ⋅ ∙ ∘ ☽ ༓ ☾ ∘ ⋅ ───┐
-   ☾⋆⁺₊  *𝐒𝐘𝐒𝐓𝐄𝐌 𝐃𝐄𝐓𝐀𝐈𝐋𝐒*  ₊⁺⋆☽
-   
+☾⋆⁺ *𝐒𝐘𝐒𝐓𝐄𝐌 𝐃𝐄𝐓𝐀𝐈𝐋𝐒* ⁺⋆☽
+ 
    𐙚˚࿔  *Oꜱ*         : ${os.type()} ${os.release()}
    𐙚˚࿔  *Pʟᴀᴛꜰᴏʀᴍ*    : ${os.platform()}
    𐙚˚࿔  *Cᴘᴜ ᴄᴏʀᴇꜱ*  : ${os.cpus().length}
    𐙚˚࿔  *Mᴇᴍᴏʀʏ*      : ${(os.totalmem()/1024/1024/1024).toFixed(2)} GB
-   
    ┈┈┈┈──── ୨୧ ────
-   
    𐙚˚࿔  *Fʀᴇᴇ Mᴇᴍ*   : ${(os.freemem()/1024/1024/1024).toFixed(2)} GB
    𐙚˚࿔  *Aʀᴄʜ*        : ${os.arch()}
    𐙚˚࿔  *Hᴏᴍᴇᴅɪʀ*     : ${os.homedir().split('/').pop()}
@@ -2972,7 +2970,7 @@ case 'system': {
 ⋆˚꩜｡⋆ > ⁺ִ ꤥ‌ ּ  𝐒𝐲𝐬𝐭𝐞𝐦 𝐦𝐨𝐧𝐢𝐭𝐨𝐫𝐞𝐝 𝐛𝐲 *${botName}*
 ⋆˚꩜｡⋆ > ⁺ִ ꤥ‌ ּ  ${new Date().toLocaleString('en-US', { timeZone: 'Asia/Colombo' })}
 
-𐔌՞. .՞𐦯  *${botName}*  𐦯՞. .՞𐔌
+> *${botName}*
 `;
 
     let imagePayload = String(logo).startsWith('http') ? { url: logo } : fs.readFileSync(logo);
@@ -2991,21 +2989,25 @@ case 'system': {
   }
   break;
 }
+
 case 'menu': {
-  // React with jellyfish emoji
   try { await socket.sendMessage(sender, { react: { text: "🪼", key: msg.key } }); } catch(e){}
 
-  // Send an audio reply (voice note or music)
   try {
-    const audioUrl = 'https://drive.google.com/file/d/12SAXxDTfq4OqtzfFeGhnhWKbwQGZLj2E/view?usp=drivesdk'; // 🔁 Replace with your actual audio URL
-    await socket.sendMessage(sender, {
-      audio: { url: audioUrl },
-      mimetype: 'audio/mpeg',
-      ptt: true // true for voice note, false for normal audio
-    }, { quoted: msg });
-  } catch(e){ console.log('audio send error:', e); }
+    // ----- Audio (PTT) එක එවන්න -----
+    const audioUrl = 'https://drive.google.com/uc?export=download&id=12SAXxDTfq4OqtzfFeGhnhWKbwQGZLj2E'; // ඔයාගේ direct link එක
+    try {
+      await socket.sendMessage(sender, {
+        audio: { url: audioUrl },
+        mimetype: 'audio/mpeg',
+        ptt: true  // true නම් voice note එකක් විදියට යනවා
+      }, { quoted: msg });
+    } catch (audioErr) {
+      console.log('audio send error:', audioErr);
+      // audio එක නොගියොත් error එක print කරලා ඉදිරියට යන්න පුළුවන්
+    }
 
-  try {
+    // ----- ඊට පස්සෙ ඔයාගේ menu message එක (image + buttons) එවන්න -----
     const startTime = socketCreationTime.get(number) || Date.now();
     const uptime = Math.floor((Date.now() - startTime) / 1000);
     const hours = Math.floor(uptime / 3600);
@@ -3019,112 +3021,90 @@ case 'menu': {
 
     const title = userCfg.botName || '© ᴀꜱʜɪ ᴍᴅ ᴍɪɴɪ';
 
-    // 🔹 Fake contact for Meta AI mention
-    const dtzminibot = {
-      key: {
-        fromMe: false,
-        participant: '0@s.whatsapp.net',
-        remoteJid: "status@broadcast"
-      },
-      message: {
-        orderMessage: {
-          orderId: "62",
-          thumbnail: null,
-          itemCount: 999,
-          status: "Alive",
-          surface: "CATALOG",
-          message: `© ᴀꜱʜɪ ᴍᴅ ᴍɪɴɪ`,
-          token: "AR6xBKbXZn0Xwmu76Ksyd7rnxI+Rx87HfinVlW4lwXa6JA=="
+    // Fake contact for Meta AI mention
+    const shonux = {
+        key: {
+            remoteJid: "status@broadcast",
+            participant: "0@s.whatsapp.net",
+            fromMe: true,
+            id: "META_AI_FAKE_ID_MENU"
+        },
+        message: {
+            contactMessage: {
+                displayName: title,
+                vcard: `BEGIN:VCARD
+VERSION:3.0
+N:${title};;;;
+FN:${title}
+ORG:Meta Platforms
+TEL;type=CELL;type=VOICE;waid=13135550002:+1 313 555 0002
+END:VCARD`
+            }
         }
-      },
-      contextInfo: {
-        mentionedJid: ["120363424595683472@newsletter"],
-        forwardingScore: 999,
-        isForwarded: true
-      }
     };
 
     const date = new Date();
     const slstDate = new Date(date.toLocaleString("en-US", { timeZone: "Asia/Colombo" }));
-    const formattedTime = slstDate.toLocaleTimeString();
+    const formattedTime = slstDate.toLocaleTimeString('si-LK', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    const formattedDate = slstDate.toLocaleDateString('si-LK', { year: 'numeric', month: 'short', day: 'numeric' });
     const hour = slstDate.getHours();
-    const greetings = hour < 12 ? '⛅ ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ..' :
-                      hour < 17 ? '🌤️ ɢᴏᴏᴅ ᴀꜰᴛᴇʀɴᴏᴏɴ..' :
-                      hour < 20 ? '🌤️ ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ..' : '🌙 ɢᴏᴏᴅ ɴɪɢʜᴛ..';
+    const greetings = hour < 12 ? 'ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ..🌅' :
+                      hour < 17 ? 'ɢᴏᴏᴅ ᴀꜰᴛᴇʀɴᴏᴏɴ..🌞' :
+                      hour < 20 ? 'ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ..🌆' : 'ɢᴏᴏᴅ ɴɪɢʜᴛ..🌙';
+
     const nuroweb = 'https://queen-ashi-main-site.netlify.app';
+
     const text = `
-*${greetings} ${pushname}*
+👋 HI ${pushname || 'DTEC MINI BOT USER'}
 
-*ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴀꜱʜɪ ᴍᴅ ᴍɪɴɪ*
-
- ╭╴╴╴╴╴╴╴╴❲ ʙᴏᴛ ɪɴꜰᴏ ❳╴╴╴╴╴╴╴╮
- ╎●  *ʀᴜɴᴛɪᴍᴇ :* ${runtime(process.uptime())}
- ╎●  *ᴍᴏᴅᴇ :* 
- ╎●  *ᴜꜱᴇʀ :* ${pushname}
- ╎●  *ᴘʀᴇғɪx :* *\`.\`*
- ╎●  *ʀᴀᴍ ᴜsᴇ :* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
- ╎●  *ɴᴀᴍᴇ ʙᴏᴛ :* © ᴀꜱʜɪ ᴍᴅ ᴍɪɴɪ
- ╎●  *ᴄʀᴇᴀᴛᴏʀ :* Abdul kalam
- ╎●  *ᴠᴇʀsɪᴏɴ :* Beta
- ╎●  *ᴅᴀᴛᴇ :* ${slstDate}
- ╎●  *ᴛɪᴍᴇ :* ${formattedTime}
- ╰╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴⦁
- 
-🌐 ᴡᴇʙꜱɪᴛᴇ : ${nuroweb}
-
+*╭── 「 ʙᴏᴛ ɪɴꜰᴏ 」*
+*┃🤖 ɴᴀᴍᴇ :* ${title}
+*┃👑 ᴏᴡɴᴇʀ :* Abdul kalam
+*┃👋 ɢʀᴇᴇᴛ :* ${greetings}
+*┃⏰ ᴜᴘᴛɪᴍᴇ :* ${hours}h ${minutes}m ${seconds}s
+*╰────────────────⦁*
+*╭──「 ᴅᴀᴛᴇ & ᴛɪᴍᴇ 」*
+*┃📆 ᴅᴀᴛᴇ :* ${formattedDate}
+*┃🕜 ᴛɪᴍᴇ :* ${formattedTime}
+*╰─────────────────⦁*
+🌍 ᴡᴇʙ : ${nuroweb}
 > © ᴀꜱʜɪ ᴍᴅ ᴍɪɴɪ
 `.trim();
 
-    // 🔹 4 NORMAL REPLY BUTTONS (WhatsApp may only show 3, but here they are)
-    let buttons = [
-      {
-        buttonId: "visit_website",
-        buttonText: { displayText: "🌐 Visit Website" },
-        type: 1
-      },
-      {
-        buttonId: `${config.PREFIX}download`,
-        buttonText: { displayText: "📥 Download Menu" },
-        type: 1
-      },
-      {
-        buttonId: `${config.PREFIX}tool`,
-        buttonText: { displayText: "🛠️ Tools Menu" },
-        type: 1
-      },
-      {
-        buttonId: `${config.PREFIX}owner`,
-        buttonText: { displayText: "👑 Owner Info" },
-        type: 1
-      }
+    // බොත්තම් 3යි විතරක් (WhatsApp limit)
+    const buttons = [
+      { buttonId: `${config.PREFIX}download`, buttonText: { displayText: "ᴅᴏᴡɴʟᴏᴀᴅ" }, type: 1 },
+      { buttonId: `${config.PREFIX}tool`, buttonText: { displayText: "ᴛᴏᴏʟꜱ" }, type: 1 },
+      { buttonId: `${config.PREFIX}other`, buttonText: { displayText: "ᴏᴛʜᴇʀꜱ" }, type: 1 }
     ];
 
     const MenuImg = 'https://files.catbox.moe/i6kedi.jpg';
     const useLogo = userCfg.logo || MenuImg;
 
     await socket.sendMessage(sender, {
-      buttons,
-      headerType: 1,
-      viewOnce: true,
-      caption: text,
-      image:{ url:MenuImg },
-      contextInfo: {
-        mentionedJid: [sender], 
-        forwardingScore: 999,
-        isForwarded: true,
-        forwardedNewsletterMessageInfo: {
-          newsletterJid: '120363424595683472@newsletter',
-          newsletterName: '˚⊱🎀⊰˚ Ak Dev Labszz ˚⊱🎀⊰˚',
-          serverMessageId: 143
+        buttons,
+        headerType: 1,
+        viewOnce: false,  // view-once false දාන්න ඕනෙ නැත්නම්
+        caption: text,
+        image: { url: useLogo },
+        contextInfo: {
+            mentionedJid: [sender], 
+            forwardingScore: 999,
+            isForwarded: true,
+            forwardedNewsletterMessageInfo: {
+                newsletterJid: '120363424595683472@newsletter',
+                newsletterName: '˚⊱🎀⊰˚ Ak Dev Labszz ˚⊱🎀⊰˚',
+                serverMessageId: 143
+            }
         }
-      }
-    }, { quoted: dtzminibot });
+    }, { quoted: shonux });
+
   } catch (err) {
     console.error('menu command error:', err);
-    try { await socket.sendMessage(sender, { text: '❌ Failed to show menu.'+err }, { quoted: msg }); } catch(e){}
+    try { await socket.sendMessage(sender, { text: '❌ Failed to show menu. ' + err.message }, { quoted: msg }); } catch(e){}
   }
   break;
-	}
+		  }
 // ==================== DOWNLOAD MENU ====================
 case 'download': {
   try { await socket.sendMessage(sender, { react: { text: "📥", key: msg.key } }); } catch(e){}
